@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include falcon *.css
+recursive-include falcon *.csv
+recursive-include falcon *.html
+recursive-include falcon *.ico
+recursive-include falcon *.js
+recursive-include falcon *.json
+recursive-include falcon *.md
+recursive-include falcon *.png
+recursive-include falcon *.py
+recursive-include falcon *.svg
+recursive-include falcon *.txt
+recursive-exclude falcon *.pyc
