@@ -12,14 +12,13 @@ def get_item_uoms(doctype, txt, searchfield, start, page_len, filters):
 	cond = ''
 	if filters and filters.get('item_code'):
 		item_code = filters.get('item_code')
-		cond = "and item.item_code = '%s'" % item_code
+		cond = " item.item_code = '%s'" % item_code
 
 	return frappe.db.sql("""select  uom.uom from `tabUOM Conversion Detail` uom
 			inner join `tabItem` item
 			where item.name=uom.parent
-			where `{key}` LIKE %(txt)s {cond}
+			where {cond}
 			order by name limit %(start)s, %(page_len)s"""
-			.format(key=searchfield, cond=cond), {
-				'txt': '%' + txt + '%',
+			.format(cond=cond), {
 				'start': start, 'page_len': page_len
 			})
