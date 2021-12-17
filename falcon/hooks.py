@@ -131,3 +131,8 @@ doctype_js = {
 # 	"Task": "falcon.task.get_dashboard_data"
 # }
 
+jenv = {
+    'methods': [
+        'get_address_display:falcon.api.get_customers_address'
+    ]
+}
